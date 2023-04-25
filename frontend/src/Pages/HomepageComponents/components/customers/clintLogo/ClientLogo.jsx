@@ -6,7 +6,7 @@ export const ClientLogo = () => {
   const [logos, setLogos] = useState([]);
 
   const getLogo = async () => {
-    const res = await axios.get('https://mysterious-ridge-11647.herokuapp.com/clientLogo');
+    const res = await axios.get('https://harvest-clone.onrender.com/clientLogo');
     setLogos(res.data);
   }
 

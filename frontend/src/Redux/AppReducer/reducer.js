@@ -12,7 +12,6 @@ export const reducer = (state = initialState, {type,payload}) => {
 
   switch (type) {
     case GET_CLIENT_REQUEST: {
-      console.log(state.isLoading,'inside reducer')
       return {...state, isLoading:true}
     }
     case GET_CLIENT_SUCCESS: {

@@ -15,7 +15,8 @@ import { ReactComponent as IconHarvest } from "../assets/IconHarvest.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { useDispatch } from "react-redux";
-import { login } from "../Redux/Authreducer/actions";
+// import { login } from "../Redux/Authreducer/actions";
+import { login } from "../Redux/AuthReducer/Actions";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
@@ -25,7 +26,6 @@ export const Login = () => {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    console.log("vinod in ogin enter")
     e.preventDefault();
     const payload = {
       email,
@@ -33,7 +33,6 @@ export const Login = () => {
     };
 
     dispatch(login(payload)).then((r) => {
-      console.log(r,'logindata');
       if (r.type === "LOGIN_SUCCESS") {
         setEmail("");
         setPassword("");
@@ -49,7 +48,6 @@ export const Login = () => {
         
         navigate("/manages")
       } else {
-        console.log("vinod in login")
         toast({
           title: 'Invalid credential.',
           description: "Please enter right email and passwotd to login.",
@@ -60,7 +58,6 @@ export const Login = () => {
 
       }
     }).catch((err) => {
-      console.log(err,'err')
       toast({
         title: 'Account created.',
         description: "We've created your account for you.",

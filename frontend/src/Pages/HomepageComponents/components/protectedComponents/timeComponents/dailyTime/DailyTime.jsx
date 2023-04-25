@@ -13,8 +13,7 @@ export const DailyTime = () => {
   const timerId = useRef(null);
   const [timer, setTimer] = useState(0);
 
-  // console.log(dateData, edit);
-  console.log(timeData);
+
 
   const start = () => {
     timerId= setInterval(() => {

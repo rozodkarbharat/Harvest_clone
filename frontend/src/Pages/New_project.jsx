@@ -71,7 +71,6 @@ var task = [
   { task_name: "Programming" },
 ];
 
-console.log(start_date, end_date);
   var tasks = [
     "Business Development",
     "Design",
@@ -90,7 +89,6 @@ console.log(start_date, end_date);
       const indexof = team_names.indexOf(selected_team[a])
 
        obj.charge = charge[indexof];
-      console.log(obj,"in")
       team_data.push(obj);
     }
     const data={
@@ -102,9 +100,8 @@ console.log(start_date, end_date);
       date:start_date,
       team:team_data
     }
-    console.log(data)
     axios
-      .post("https://mysterious-ridge-11647.herokuapp.com/project", data, {
+      .post("https://harvest-clone.onrender.com/project", data, {
         headers: {
           authorization: `bearer ${token}`,
         },
@@ -114,11 +111,10 @@ console.log(start_date, end_date);
 
 const handleDeleteTeamMember=async(e)=>{
   const {id}=e.target
-  console.log(e.target.id,"jk")
       const temp = team_names;
       var indexOfTeam=-1
       for (let a = 0; a < temp.length; a++) {
-        // console.log(id,temp[a])
+
         if (temp[a] === id) {
           indexOfTeam = a;
           break;
@@ -156,9 +152,7 @@ const handleDeleteTeamMember=async(e)=>{
      }
      const tempcharge=charge
       tempcharge[index]=value
-      console.log(tempcharge)
    await setcharge(()=>tempcharge)
-   console.log(charge)
 
   }
   const handlecheckbox=(e)=>{
@@ -166,7 +160,6 @@ const handleDeleteTeamMember=async(e)=>{
    const {checked,id}=e.target
     var temp = selected_team;
     var tempcharge=selected_team_charge
-    // console.log(id,"nm")
    if(checked){
    temp.push(id)
    tempcharge.push(0)
@@ -185,7 +178,6 @@ const handleDeleteTeamMember=async(e)=>{
       tempcharge.splice(index,1)
     }
    }
-  //  console.log(temp)
     setselected_team(temp);
     setselected_team_charge(()=>tempcharge)
   }
@@ -197,7 +189,7 @@ const handleDeleteTeamMember=async(e)=>{
 
   useEffect(() => {
     axios
-      .get("https://mysterious-ridge-11647.herokuapp.com/client", {
+      .get("https://harvest-clone.onrender.com/client", {
         headers: {
           authorization: `bearer ${token}`,
         },

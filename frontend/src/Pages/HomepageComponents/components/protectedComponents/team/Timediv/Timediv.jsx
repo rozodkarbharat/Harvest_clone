@@ -6,8 +6,8 @@ const Timediv = () => {
   const[data,setData]=useState([]);
   useEffect(()=>
   {
-    axios.get('https://mysterious-ridge-11647.herokuapp.com/userData')
-    .then((r)=>{console.log(r.data);setData(r.data)});
+    axios.get('https://harvest-clone.onrender.com/userData')
+    .then((r)=>{setData(r.data)});
   },[])
   return (
     <Box marginTop="1rem">

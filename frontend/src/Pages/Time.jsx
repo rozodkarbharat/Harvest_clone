@@ -59,10 +59,10 @@ export const Time = () => {
   const [project_data, setproject_data] = useState([]);  
   const [team_name, setTeam_name] = useState("")
   const [budget,setBudget]=useState(0)
-  //  console.log(tasks,"task");
+
 
   useEffect(() => {
-axios.get("https://mysterious-ridge-11647.herokuapp.com/project",{
+axios.get("https://harvest-clone.onrender.com/project",{
       headers: {
         authorization: `bearer ${token}`,
       },
@@ -75,14 +75,10 @@ axios.get("https://mysterious-ridge-11647.herokuapp.com/project",{
     for(var a=0;a<project_data.length;a++){
       if (project_data[a].project_name === e.target.value) {
         count = a;
-        // console.log(project_data[a].task);
       }
     }
-    console.log(count)
-    console.log(project_data[count].task, "hello");
-    console.log(project_data[count],'selected project')
+
     settasks(() => project_data[count].task);
-    console.log(project_data[count],'sample project')
   
     setTeam_name(project_data[count].team[0].emp_name)
     setBudget(project_data[count].budget)
@@ -92,7 +88,6 @@ const handleSubmitWeek=()=>{
   var arr = week.day1;
 
   for (var a = 0; a < arr.length; a++) {
-    // console.log(arr[a])
     const hour = arr[a].time;
     
     var tempwork = {
@@ -104,7 +99,6 @@ const handleSubmitWeek=()=>{
     };
     work.push(tempwork);
   }
-console.log(week.day1[0],'day1 0')
 
   var data = {
     project_name: week.day1[0].project,
@@ -114,10 +108,9 @@ console.log(week.day1[0],'day1 0')
     work: work,
     budget:budget
   };
-  console.log(data,'vinod data');
   
   axios
-    .post("https://mysterious-ridge-11647.herokuapp.com/time", data, {
+    .post("https://harvest-clone.onrender.com/time", data, {
       headers: {
         authorization: `bearer ${token}`,
       }
@@ -130,7 +123,6 @@ console.log(week.day1[0],'day1 0')
         duration: 9000,
         isClosable: true,
       })
-      console.log(r.data)
     })
     .catch((err) => console.log(err));
 

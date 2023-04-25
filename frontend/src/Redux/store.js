@@ -8,7 +8,7 @@ import thunk from "redux-thunk";
 
 import { reducer as AppReducer } from "./AppReducer/reducer";
 
-import { reducer as AuthReducer } from "./Authreducer/reducer";
+import { reducer as AuthReducer } from "./AuthReducer/Reducer";
 
 const composeEnhancers =
   (typeof window !== "undefined" &&

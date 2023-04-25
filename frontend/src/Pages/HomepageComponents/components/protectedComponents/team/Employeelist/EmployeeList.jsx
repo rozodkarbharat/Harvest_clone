@@ -7,11 +7,11 @@ const EmployeeList = () => {
   const[user,setUser]=useState([]);
   useEffect(()=>
   {
-    axios.get('https://mysterious-ridge-11647.herokuapp.com/userData')
-    .then((r)=>{console.log(r.data);setData(r.data)});
+    axios.get('https://harvest-clone.onrender.com/userData')
+    .then((r)=>{setData(r.data)});
 
-    axios.get('https://mysterious-ridge-11647.herokuapp.com/registeredUsers')
-    .then((r)=>{console.log(r.data);setUser(r.data)});
+    axios.get('https://harvest-clone.onrender.com/registeredUsers')
+    .then((r)=>{setUser(r.data)});
 
   },[])
   return (

@@ -20,7 +20,6 @@ export const Reporttable = ({ data,name }) => {
     total = total+data[i].total;
   }
     const heading = Object.keys(data[0]);
-    console.log(heading,'heading')  
 
 
   return (

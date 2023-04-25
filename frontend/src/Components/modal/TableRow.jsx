@@ -5,8 +5,6 @@ import { TableColumn } from './TableColumn';
 export const TableRow = ({data,name}) => {
 
     const values = Object.values(data);
-    console.log(data,'data')
-    console.log(values,'values');
 
 const heading = Object.keys(data);
   return (

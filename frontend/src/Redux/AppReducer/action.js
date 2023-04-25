@@ -15,11 +15,9 @@ const token=JSON.parse(localStorage.getItem("token"))
 
 
 export const getClientsData = () => async (dispatch) => {
-    console.log("step1 get client")
    
     dispatch(get_client_request())
-    console.log("step2 client request")
-   fetch("https://mysterious-ridge-11647.herokuapp.com/client", {
+    fetch("https://harvest-clone.onrender.com/client", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -27,17 +25,14 @@ export const getClientsData = () => async (dispatch) => {
       },
     })
        .then((res) => {
-           console.log("vinod M chaudhari",res)
-           return res.json()
+            return res.json()
        })
       .then((res) => {
-          console.log(res);
-          console.log("client success")
-return dispatch(get_client_success(res))
+            return dispatch(get_client_success(res))
         
       })
       .catch((err) => {
-        console.log(err, 'err');
-        
+            console.log(err, 'err');
+            return dispatch(get_client_error())
       });
   };

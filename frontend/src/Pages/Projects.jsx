@@ -25,7 +25,6 @@ import { useSelector } from "react-redux";
 const Projects = () => {
   const [data, setdata] = useState([])
       const token = useSelector((store) => store.AuthReducer.token);
-  console.log(data)
   const navigte=useNavigate()
   const handleclick=()=>{
     navigte("/new_project");
@@ -33,7 +32,7 @@ const Projects = () => {
 
   useEffect(() => {
     axios
-      .get("https://mysterious-ridge-11647.herokuapp.com/project", {
+      .get("https://harvest-clone.onrender.com/project", {
         headers: {
           authorization: `bearer ${token}`,
         },

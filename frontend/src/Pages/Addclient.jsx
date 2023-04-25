@@ -18,12 +18,12 @@ export const AddClient = () => {
 
         let { name, value } = e.target;
         setPayload({ ...payload, [name]: value })
-        console.log(payload,'payload')
+
     }
 
   const addclient = async () => {
  
-    await fetch("https://mysterious-ridge-11647.herokuapp.com/client", {
+    await fetch("https://harvest-clone.onrender.com/client", {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {
@@ -33,7 +33,6 @@ export const AddClient = () => {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
         dispatch(getClientsData())
         navigate("/manages");
       })

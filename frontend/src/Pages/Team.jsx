@@ -1,5 +1,4 @@
 import { Box, Flex, Icon, Spacer, Tab, TabList, TabPanel, TabPanels, Tabs, Text } from '@chakra-ui/react'
-import MultiColorProgressbar from 'multi-color-progressbar-with-indicator'
 import React, { useEffect, useState } from 'react'
 import { BsArrowLeftSquare, BsArrowRightSquare } from 'react-icons/bs'
 import { useSelector } from 'react-redux'
@@ -103,12 +102,11 @@ export const Team = () => {
   
       for(let j = 0; j < res[i].work.length; j++) {
         let vin = res[i].work[j];
-        console.log(vin,'vin')
+        
         Billable = Billable + vin.billable;
         Notbillable = Notbillable + vin.notbillable;
         Total = Total + (vin.charge*vin.billable);
       }
-// console.log(obj,'teams')
       obj[res[i].emp_name].billable = obj[res[i].emp_name].billable + Billable;
       obj[res[i].emp_name].notbillable = obj[res[i].emp_name].notbillable + Notbillable;
       obj[res[i].emp_name].hours= obj[res[i].emp_name].notbillable+obj[res[i].emp_name].billable
@@ -119,15 +117,13 @@ let vinu=[]
     for (let key in obj) {
   vinu.push({team_name:key, ...obj[key]})
     }
-    console.log(obj,'vinubhai team object')
-    console.log(vinu,'vinubhai team')
     return vinu;
   }
 
 
   
   const getdata = async () => {
-    await fetch("https://mysterious-ridge-11647.herokuapp.com/time", {
+    await fetch("https://harvest-clone.onrender.com/time", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -136,7 +132,6 @@ let vinu=[]
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
      
 
         let d = getteam(res)
@@ -196,7 +191,7 @@ let vinu=[]
           
         </Box>
         <Box w="18%" mr='10px'>
-        <MultiColorProgressbar value={70} height={30} bars={bars} minVal={0} maxVal={120} />
+        
           
         </Box>
 

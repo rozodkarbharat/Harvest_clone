@@ -18,8 +18,6 @@ import { Teamworkrow } from './Teamworkrow'
 export const Teamworktable = ({ data }) => {
     
     const heading = Object.keys(data[0]);
-    console.log(heading,'heading')
-console.log(data,'data')
 
   return (
       <Box>

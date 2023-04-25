@@ -5,7 +5,7 @@ import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-import {signup} from "../Redux/Authreducer/actions"
+import {signup} from "../Redux/AuthReducer/Actions"
 
 import { ReactComponent as IconHarvest } from "../assets/IconHarvest.svg";
 

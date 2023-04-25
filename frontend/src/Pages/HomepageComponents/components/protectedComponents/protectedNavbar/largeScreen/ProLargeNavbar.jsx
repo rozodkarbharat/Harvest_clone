@@ -9,7 +9,7 @@ export const ProLargeNavbar = () => {
 
   useEffect(()=>
   {
-    axios.get('https://mysterious-ridge-11647.herokuapp.com/registeredUsers')
+    axios.get('https://harvest-clone.onrender.com/registeredUsers')
     .then((r)=>setUser(r.data));
   },[])
 

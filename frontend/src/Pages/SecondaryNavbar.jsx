@@ -45,15 +45,7 @@ const SecondaryNavbar = () => {
           >
             <NavLink to="/time">Time</NavLink>
           </Flex>
-          <Flex
-            alignItems={"center"}
-            h="3rem"
-            px="6px"
-            _hover={{ bg: "#ffdd99" }}
-            _selected={{ bg: "#ffdd99" }}
-          >
-            <NavLink to="/expenses">Expenses</NavLink>
-          </Flex>
+
           <Flex
             alignItems={"center"}
             h="3rem"
@@ -90,15 +82,7 @@ const SecondaryNavbar = () => {
           >
             <NavLink to="/invoices">Invoices</NavLink>
           </Flex>
-          <Flex
-            alignItems={"center"}
-            h="3rem"
-            px="6px"
-            _hover={{ bg: "#ffdd99" }}
-            _selected={{ bg: "#ffdd99" }}
-          >
-            <NavLink to="/estimates">Estimates</NavLink>
-          </Flex>
+
           <Flex
             alignItems={"center"}
             h="3rem"

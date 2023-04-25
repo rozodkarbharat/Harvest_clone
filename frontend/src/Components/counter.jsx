@@ -4,7 +4,6 @@ import counter from "../module.css/Counter.module.css"
 
   
     const timeconvert = (tm) => {
-      console.log(tm)
       const hour = Math.floor(tm / 60);
       const remain_minute = tm % 60;
       return hour + ":" + remain_minute;
@@ -26,7 +25,6 @@ export const Counter = ({day,id, time, setisClockRunning, isClockRunning,setweek
     var tempweek=week
     setState(() => !state);
     var obj = tempweek[day];
-    // console.log(typeof())
     for (var key in obj) {
       if(obj[key].id===id){
 
@@ -39,7 +37,6 @@ export const Counter = ({day,id, time, setisClockRunning, isClockRunning,setweek
     if(vinod%1000===0){
         var tempweek = week;
          var obj = tempweek[day];
-         // console.log(typeof())
          for (var key in obj) {
            if (obj[key].id === id) {
              tempweek[day][key].time = vinod;

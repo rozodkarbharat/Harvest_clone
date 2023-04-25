@@ -33,7 +33,7 @@ export const Project = () => {
 const [data,setData]=useState([])
 
 useEffect(()=>{
-  axios.get("https://mysterious-ridge-11647.herokuapp.com/expenses")
+  axios.get("https://harvest-clone.onrender.com/expenses")
   .then((res)=>setData(res.data))
 },[])
 

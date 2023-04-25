@@ -4,10 +4,8 @@ import React from 'react'
 import { useState } from 'react'
 
 export const Daytypes = ({ w }) => {
-    console.log(w,'props')
     const [time, setTime] = useState("Week")
     const handleSelect = (e) => {
-        console.log(e.target.value, 'value')
         setTime(e.target.value)
     }
   return (

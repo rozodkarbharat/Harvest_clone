@@ -3,7 +3,6 @@ import React from 'react'
 
 
 export const Teamworkrow = ({ data }) => {
-    console.log(data,'teamworkrow')
   return (
       <>
           {data.map((item, ind) => (

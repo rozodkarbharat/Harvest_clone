@@ -24,13 +24,8 @@ import { getClientsData } from "../Redux/AppReducer/action";
 export const Manage = () => {
   
   const { isLoading, data } = useSelector((store) => store.AppReducer);
-  console.log(isLoading,'isLoading')
   const [client_data, setClient_data] = useState(data || []);
   const dispatch=useDispatch()
-  // const { id } = useParams();
-
-  // console.log(id);
-  const navigate=useNavigate()
 
   const getClientsdata = async () => {
     dispatch(getClientsData())
@@ -39,7 +34,6 @@ export const Manage = () => {
   useEffect(() => {
     if (data.length == 0) {
       getClientsdata().then((res) => {
-        console.log(res,'manage then condition')
       })
   
     }

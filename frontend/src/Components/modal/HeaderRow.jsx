@@ -7,8 +7,6 @@ export const HeaderRow = ({data}) => {
 
     const values = Object.values(data);
 
-console.log(values);
-
 
   return (
       <>

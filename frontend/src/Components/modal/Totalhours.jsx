@@ -1,8 +1,7 @@
 import React from 'react'
-import MultiColorProgressbar from 
-"multi-color-progressbar-with-indicator";
 
-import "multi-color-progressbar-with-indicator/dist/index.css";
+
+// import "multi-color-progressbar-with-indicator/dist/index.css";
 import { Box, Flex, Text } from '@chakra-ui/react';
 export const Totalhours = ({width}) => {
     var bars = [
@@ -23,7 +22,7 @@ export const Totalhours = ({width}) => {
                     <Text>140</Text>
                 </Box>
            </Flex>
-            <MultiColorProgressbar value={70} height={30} bars={bars} minVal={0} maxVal={140} />
+        
      
             <Box mt="40px">
                 <Flex justifyContent="space-between">

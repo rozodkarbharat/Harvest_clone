@@ -112,7 +112,7 @@ export const Report = () => {
   
       for(let j = 0; j < res[i].work.length; j++) {
         let vin = res[i].work[j];
-        console.log(vin,'vin')
+  
         Billable = Billable + vin.billable;
         Notbillable = Notbillable + vin.notbillable;
         Total = Total + (vin.charge*vin.billable);
@@ -127,7 +127,7 @@ let vinu=[]
     for (let key in obj) {
   vinu.push({projectname:key, ...obj[key]})
     }
-    console.log(vinu,'vinu')
+    
     return vinu;
   }
 
@@ -147,7 +147,6 @@ let vinu=[]
   
       for(let j = 0; j < res[i].work.length; j++) {
         let vin = res[i].work[j];
-        console.log(vin,'vin')
         Billable = Billable + vin.billable;
         Notbillable = Notbillable + vin.notbillable;
         Total = Total + (vin.charge*vin.billable);
@@ -163,8 +162,6 @@ let vinu=[]
     for (let key in obj) {
   vinu.push({clientName:key, ...obj[key]})
     }
-    console.log(obj,'vinubhai object')
-    console.log(vinu,'vinubhai')
     return vinu;
   }
 
@@ -190,7 +187,7 @@ let vinu=[]
           obj[vin.task]={ hours:0 ,billable:0,notbillable:0,total:0}
         }
         
-        console.log(vin,'vin')
+        
         Billable = Billable + vin.billable;
         Notbillable = Notbillable + vin.notbillable;
         Total = Total + (vin.charge * vin.billable);
@@ -213,8 +210,6 @@ let vinu=[]
     for (let key in obj) {
   vinu.push({task_name:key, ...obj[key]})
     }
-    console.log(obj,'vinubhai task object') 
-    console.log(vinu,'vinubhai task')
     return vinu;
   }
 
@@ -233,12 +228,11 @@ let vinu=[]
   
       for(let j = 0; j < res[i].work.length; j++) {
         let vin = res[i].work[j];
-        console.log(vin,'vin')
+        
         Billable = Billable + vin.billable;
         Notbillable = Notbillable + vin.notbillable;
         Total = Total + (vin.charge*vin.billable);
       }
-// console.log(obj,'teams')
       obj[res[i].emp_name].billable = obj[res[i].emp_name].billable + Billable;
       obj[res[i].emp_name].notbillable = obj[res[i].emp_name].notbillable + Notbillable;
       obj[res[i].emp_name].hours= obj[res[i].emp_name].notbillable+obj[res[i].emp_name].billable
@@ -250,15 +244,13 @@ let vinu=[]
     for (let key in obj) {
   vinu.push({team_name:key, ...obj[key]})
     }
-    console.log(obj,'vinubhai team object')
-    console.log(vinu,'vinubhai team')
     return vinu;
   }
 
 
 
   const getdata = async () => {
-    await fetch("https://mysterious-ridge-11647.herokuapp.com/time", {
+    await fetch("https://harvest-clone.onrender.com/time", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -267,7 +259,6 @@ let vinu=[]
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
          let a = getprojects(res)
         setProject([...a])
 
