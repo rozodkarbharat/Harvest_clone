@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { Box, CircularProgress, CircularProgressLabel, Flex, Heading, Icon, Spacer, Text } from "@chakra-ui/react"
-import { Daytypes } from '../Components/Vinodmodal/Daytypes'
-import { Reporttable } from '../Components/Vinodmodal/Reporttable'
-import { Totalhours } from '../Components/Vinodmodal/Totalhours'
-import { Projectsbreakdown } from '../Components/Vinodmodal/Projectsbrekdown'
-import { Taskbreakdown } from '../Components/Vinodmodal/Taskbreakdown'
-import { Teamworktable } from '../Components/Vinodmodal/Teamwektable'
+import { Daytypes } from '../Components/modal/Daytypes'
+import { Reporttable } from '../Components/modal/Reporttable'
+import { Totalhours } from '../Components/modal/Totalhours'
+import { Projectsbreakdown } from '../Components/modal/Projectsbrekdown'
+import { Taskbreakdown } from '../Components/modal/Taskbreakdown'
+import { Teamworktable } from '../Components/modal/Teamwektable'
 import { BsArrowLeftSquare, BsArrowRightSquare } from "react-icons/bs"
 import { FormText } from 'reactstrap'
 import SecondaryFooter from './SecondaryFooter'
